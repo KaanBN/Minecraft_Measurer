@@ -1,0 +1,17 @@
+C:\Users\kaanm\source\repos\WPFbasics\bin\Debug\WPFbasics.exe.config
+C:\Users\kaanm\source\repos\WPFbasics\bin\Debug\WPFbasics.exe
+C:\Users\kaanm\source\repos\WPFbasics\bin\Debug\WPFbasics.pdb
+C:\Users\kaanm\source\repos\WPFbasics\obj\Debug\WPFbasics.csprojAssemblyReference.cache
+C:\Users\kaanm\source\repos\WPFbasics\obj\Debug\MainWindow.g.cs
+C:\Users\kaanm\source\repos\WPFbasics\obj\Debug\App.g.cs
+C:\Users\kaanm\source\repos\WPFbasics\obj\Debug\WPFbasics_MarkupCompile.cache
+C:\Users\kaanm\source\repos\WPFbasics\obj\Debug\WPFbasics_MarkupCompile.lref
+C:\Users\kaanm\source\repos\WPFbasics\obj\Debug\MainWindow.baml
+C:\Users\kaanm\source\repos\WPFbasics\obj\Debug\WPFbasics.g.resources
+C:\Users\kaanm\source\repos\WPFbasics\obj\Debug\WPFbasics.Properties.Resources.resources
+C:\Users\kaanm\source\repos\WPFbasics\obj\Debug\WPFbasics.csproj.GenerateResource.cache
+C:\Users\kaanm\source\repos\WPFbasics\obj\Debug\WPFbasics.csproj.CoreCompileInputs.cache
+C:\Users\kaanm\source\repos\WPFbasics\obj\Debug\WPFbasics.exe
+C:\Users\kaanm\source\repos\WPFbasics\obj\Debug\WPFbasics.pdb
+C:\Users\kaanm\source\repos\WPFbasics\obj\Debug\Message_Box.g.cs
+C:\Users\kaanm\source\repos\WPFbasics\obj\Debug\Message_Box.baml
