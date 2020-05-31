@@ -315,7 +315,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <!--Upper Right-->
-            <Grid Grid.Row="0" Margin="10">
+            <Grid Grid.Row="1" Margin="10">
                 <Grid.Background>
                     <ImageBrush ImageSource="ReactorGUI_Background.png"/>
                 </Grid.Background>
