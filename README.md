@@ -11,4 +11,4 @@ actually, no but I was using this a lot while playing with my friends and I want
 ### It also has it's own error box :smile:
 ![messagebox](https://user-images.githubusercontent.com/59030268/83305097-c8c4cc00-a208-11ea-9e2e-eb9fa2bcc0a2.png)
 
-this is my very first wpf application probably I won't update it and forget :smile:
+this is my very first wpf application probably I won't update it.
