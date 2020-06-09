@@ -42,7 +42,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" TextElement.FontFamily="/Fonts/#Minecraft" Foreground="#FF1EE200" FontSize="22">Every cell must have a value !</TextBlock>
+        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" TextElement.FontFamily="/Fonts/#Minecraft" Foreground="#FF1EE200" FontSize="22">Every cell must have a value !</TextBlock>
         <Button Grid.Row="1" Margin="120,0" Click="Button_Click" Height="30" Foreground="{x:Null}" BorderBrush="{x:Null}" >
         </Button>
     </Grid>
