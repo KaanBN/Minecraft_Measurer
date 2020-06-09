@@ -31,8 +31,8 @@ namespace WPFbasics
         {
             if((String.IsNullOrEmpty(current_x_get.Text) || String.IsNullOrEmpty(current_y_get.Text) || String.IsNullOrEmpty(current_z_get.Text) || String.IsNullOrEmpty(destination_x_get.Text) || String.IsNullOrEmpty(destination_y_get.Text) || String.IsNullOrEmpty(destination_z_get.Text)))
             {
-                Message_Box anan = new Message_Box();
-                anan.Show();
+                var anana = new Message_box();
+                anana.ShowDialog();
             }
             else
             {
@@ -115,12 +115,7 @@ namespace WPFbasics
             textBox.SelectAll();
         }
 
-        private void Window_dragging_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
-        }
-
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        private void draging_bar(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
         }

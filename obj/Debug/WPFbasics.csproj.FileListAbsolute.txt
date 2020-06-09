@@ -20,15 +20,15 @@ C:\Users\kaanm\Source\Repos\Minecraft_Measurer\bin\Debug\WPFbasics.exe
 C:\Users\kaanm\Source\Repos\Minecraft_Measurer\bin\Debug\WPFbasics.pdb
 C:\Users\kaanm\Source\Repos\Minecraft_Measurer\obj\Debug\WPFbasics.csprojAssemblyReference.cache
 C:\Users\kaanm\Source\Repos\Minecraft_Measurer\obj\Debug\MainWindow.g.cs
-C:\Users\kaanm\Source\Repos\Minecraft_Measurer\obj\Debug\Message_Box.g.cs
 C:\Users\kaanm\Source\Repos\Minecraft_Measurer\obj\Debug\App.g.cs
 C:\Users\kaanm\Source\Repos\Minecraft_Measurer\obj\Debug\WPFbasics_MarkupCompile.cache
 C:\Users\kaanm\Source\Repos\Minecraft_Measurer\obj\Debug\WPFbasics_MarkupCompile.lref
 C:\Users\kaanm\Source\Repos\Minecraft_Measurer\obj\Debug\MainWindow.baml
-C:\Users\kaanm\Source\Repos\Minecraft_Measurer\obj\Debug\Message_Box.baml
 C:\Users\kaanm\Source\Repos\Minecraft_Measurer\obj\Debug\WPFbasics.g.resources
 C:\Users\kaanm\Source\Repos\Minecraft_Measurer\obj\Debug\WPFbasics.Properties.Resources.resources
 C:\Users\kaanm\Source\Repos\Minecraft_Measurer\obj\Debug\WPFbasics.csproj.GenerateResource.cache
 C:\Users\kaanm\Source\Repos\Minecraft_Measurer\obj\Debug\WPFbasics.csproj.CoreCompileInputs.cache
 C:\Users\kaanm\Source\Repos\Minecraft_Measurer\obj\Debug\WPFbasics.exe
 C:\Users\kaanm\Source\Repos\Minecraft_Measurer\obj\Debug\WPFbasics.pdb
+C:\Users\kaanm\Source\Repos\Minecraft_Measurer\obj\Debug\Message_Box.g.cs
+C:\Users\kaanm\Source\Repos\Minecraft_Measurer\obj\Debug\Message_Box.baml

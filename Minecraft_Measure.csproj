@@ -35,11 +35,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>iconfinder_Education-Filled_29_3672873.ico</ApplicationIcon>
+    <ApplicationIcon>Assets\iconfinder_Education-Filled_29_3672873.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -70,14 +72,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Message_Box.xaml">
+    <Page Include="Message_box.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Message_Box.xaml.cs">
-      <DependentUpon>Message_Box.xaml</DependentUpon>
+    <Compile Include="Message_box.xaml.cs">
+      <DependentUpon>Message_box.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -106,37 +108,37 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Screenshot_3.png" />
+    <Resource Include="Assets\Screenshot_3.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Speed.png" />
+    <Resource Include="Assets\Speed.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="button_center.png" />
+    <Resource Include="Assets\button_center.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ReactorGUI_Background.png" />
+    <Resource Include="Assets\ReactorGUI_Background.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="inside.png" />
+    <Resource Include="Assets\inside.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="insideception.png" />
+    <Resource Include="Assets\insideception.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="inside_active.png" />
+    <Resource Include="Assets\inside_active.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="button_active.png" />
+    <Resource Include="Assets\button_active.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Speed_active.png" />
+    <Resource Include="Assets\Speed_active.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="inside_long.png" />
+    <Resource Include="Assets\inside_long.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="bedrock.png" />
+    <Resource Include="Assets\bedrock.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Ok_off.png" />
@@ -148,7 +150,7 @@
     <Resource Include="message_box_back.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="iconfinder_Education-Filled_29_3672873.ico" />
+    <Resource Include="Assets\iconfinder_Education-Filled_29_3672873.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
