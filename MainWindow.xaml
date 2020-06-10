@@ -13,8 +13,8 @@
         <ImageBrush x:Key="Calc_button_on" ImageSource="/Assets/button_active.png"/>
         <ImageBrush x:Key="inside_active" ImageSource="/Assets/inside_active.png"/>
         <ImageBrush x:Key="inside_off" ImageSource="/Assets/insideception.png"/>
-        <ImageBrush x:Key="Exit" ImageSource="/Assets/speed.png" Stretch="UniformToFill"/>
-        <ImageBrush x:Key="Exit_active" ImageSource="/Assets/Speed_active.png" Stretch="UniformToFill"/>
+        <ImageBrush x:Key="Exit" ImageSource="/Assets/speed.png" Stretch="Uniform"/>
+        <ImageBrush x:Key="Exit_active" ImageSource="/Assets/Speed_active.png" Stretch="Uniform"/>
         <Style x:Key="CustomFont">
             <Setter Property="TextElement.FontFamily" Value="/Fonts/#Minecraft"/>
         </Style>
@@ -69,40 +69,113 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="436.8"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Border Grid.ColumnSpan="2" Background="#FF323030" Height="15.2" VerticalAlignment="Top" MouseDown="draging_bar"></Border>
-
         <!--Only Exit-->
-        <Border Height="30" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="400,0,399.8,0" Background="#FF323030" CornerRadius="0,0,15,15" MouseDown="draging_bar">
-            <Grid Grid.RowSpan="2">
-                <StackPanel  VerticalAlignment="Center" Orientation="Horizontal" WindowChrome.IsHitTestVisibleInChrome="True" HorizontalAlignment="Center">
-                    <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="27" Name="CloseButton" Height="25" BorderBrush="{x:Null}" >
-                        <Button.Style>
-                            <Style TargetType="{x:Type Button}">
-                                <Setter Property="Background" Value="{StaticResource Exit}"/>
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="{x:Type Button}">
-                                            <Border Background="{TemplateBinding Background}" BorderBrush="#FF323030" BorderThickness="1" >
-                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="{StaticResource Exit_active}"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                    </Button>
-                </StackPanel>
-            </Grid>
+        <Border Height="30" 
+                VerticalAlignment="Top" 
+                Grid.ColumnSpan="2" 
+                Margin="400,0,399.8,0" 
+                CornerRadius="0,0,15,15" 
+                MouseDown="draging_bar">
+            <Border.Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Background" Value="#FF323030"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=CloseButton, Path=IsMouseOver}" Value="True">
+                            <DataTrigger.Setters>
+                                <Setter Property="Background" Value="#FF595959"/>
+                                <Setter Property="BorderThickness" Value="3,0,3,1"/>
+                                <Setter Property="BorderBrush" Value="#FF323030"/>
+                            </DataTrigger.Setters>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <Button HorizontalAlignment="Center" 
+                            VerticalAlignment="Center" 
+                            Width="73" 
+                            Name="CloseButton" 
+                            Height="30" 
+                            BorderBrush="{x:Null}">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="{StaticResource Exit}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource Exit_active}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </Border>
-
+        <!--History Border-->
+        <Border Name="HistoryBorder" 
+                Grid.Column="0" 
+                Height="30" 
+                VerticalAlignment="Top" 
+                Margin="0,0,363.8,0" 
+                CornerRadius="0,0,15,0" 
+                MouseDown="draging_bar">
+            <Border.Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Background" Value="#FF323030"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=HistoryButton, Path=IsMouseOver}" Value="True">
+                            <DataTrigger.Setters>
+                                <Setter Property="BorderThickness" Value="0,0,2,0.5"/>
+                                <Setter Property="BorderBrush" Value="#FF323030"/>
+                                <Setter Property="Background" Value="#FFB6B002"/>
+                            </DataTrigger.Setters>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <!--history button-->
+            <Button HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Width="72.9" 
+                    Name="HistoryButton" 
+                    Height="30" 
+                    Margin="0" 
+                    TextElement.FontFamily = "/Fonts/#Minecraft">
+                <Button.Content>
+                    History
+                </Button.Content>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="#FFB6B002"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="TextElement.Foreground" Value="#FF323030"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Border>
         <!--All of the light gray thing-->
         <Grid Grid.Column="0" Grid.Row="1" Margin="10,9.6,9.8,10">
             <Grid.Background>
@@ -307,7 +380,14 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <!--Upper Right-->
+            <!--Upper Right (Educational)-->
+            <Grid Grid.Row="0" Margin="10">
+                <Grid.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/Assets/Teacher.png"/>
+                </Grid.Background>
+
+            </Grid>
+            <!--Lower Right-->
             <Grid Grid.Row="1" Margin="10">
                 <Grid.Background>
                     <ImageBrush ImageSource="/Assets/ReactorGUI_Background.png"/>
@@ -383,8 +463,6 @@
 
             </Grid>
         </Grid>
-
-
     </Grid>
 
 

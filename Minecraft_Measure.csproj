@@ -152,5 +152,8 @@
   <ItemGroup>
     <Resource Include="Assets\iconfinder_Education-Filled_29_3672873.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Teacher.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

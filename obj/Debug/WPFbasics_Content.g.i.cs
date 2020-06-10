@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("iconfinder_education-filled_29_3672873.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tecaher.png")]
 
 
