@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tecaher.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pages/underconstruction.gif")]
 
 

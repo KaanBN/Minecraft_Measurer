@@ -9,55 +9,8 @@
         mc:Ignorable="d"
         Title="Destination Calculator" Height="480" Width="872.825">
     <Window.Resources>
-        <ImageBrush x:Key="Calc_button_off" ImageSource="/Assets/button_center.png"/>
-        <ImageBrush x:Key="Calc_button_on" ImageSource="/Assets/button_active.png"/>
-        <ImageBrush x:Key="inside_active" ImageSource="/Assets/inside_active.png"/>
-        <ImageBrush x:Key="inside_off" ImageSource="/Assets/insideception.png"/>
         <ImageBrush x:Key="Exit" ImageSource="/Assets/speed.png" Stretch="Uniform"/>
         <ImageBrush x:Key="Exit_active" ImageSource="/Assets/Speed_active.png" Stretch="Uniform"/>
-        <Style x:Key="CustomFont">
-            <Setter Property="TextElement.FontFamily" Value="/Fonts/#Minecraft"/>
-        </Style>
-        <Style x:Key="anan" TargetType="{x:Type TextBox}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type TextBox}">
-                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
-                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="Black"/>
-                            </Trigger>
-                            <Trigger Property="IsFocused" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="Yellow"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="TextElement.FontFamily" Value="/Fonts/#Minecraft"/>
-            <Setter Property="Foreground" Value="#FF19198B"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="Margin" Value="10 8"/>
-            <Setter Property="MaxLength" Value="6"/>
-            <Setter Property="Background" Value="#FF666666"/>
-            <Setter Property="BorderBrush" Value="Black"/>
-            <EventSetter Event="PreviewTextInput" Handler="Left_TextBoxs_previewtextinput"/>
-            <EventSetter Event="GotFocus" Handler="Left_TextBoxs_get_GotFocus"/>
-            <EventSetter Event="GotMouseCapture" Handler="current_x_get_GotMouseCapture"/>
-            <Style.Triggers>
-                <Trigger Property="IsFocused" Value="true">
-                    <Setter Property="Foreground" Value="#FF66B616"/>
-                    <Setter Property="Background" Value="#FF3E2727"/>
-                    <Setter Property="BorderBrush" Value="Black"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
     </Window.Resources>
     <Window.Background>
         <ImageBrush ImageSource="/Assets/Screenshot_3.png"/>
@@ -121,8 +74,8 @@
                 </Button.Style>
             </Button>
         </Border>
-        <!--History Border-->
-        <Border Name="HistoryBorder" 
+        <!--Home Border-->
+        <Border Name="HomeBorder" 
                 Grid.Column="0" 
                 Height="30" 
                 VerticalAlignment="Top" 
@@ -133,7 +86,7 @@
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="Background" Value="#FF323030"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding ElementName=HistoryButton, Path=IsMouseOver}" Value="True">
+                        <DataTrigger Binding="{Binding ElementName=HomeButton, Path=IsMouseOver}" Value="True">
                             <DataTrigger.Setters>
                                 <Setter Property="BorderThickness" Value="0,0,2,0.5"/>
                                 <Setter Property="BorderBrush" Value="#FF323030"/>
@@ -143,17 +96,15 @@
                     </Style.Triggers>
                 </Style>
             </Border.Style>
-            <!--history button-->
+            <!--Home button-->
             <Button HorizontalAlignment="Center" 
                     VerticalAlignment="Center" 
                     Width="72.9" 
-                    Name="HistoryButton" 
+                    Name="HomeButton" 
                     Height="30" 
                     Margin="0" 
-                    TextElement.FontFamily = "/Fonts/#Minecraft">
-                <Button.Content>
-                    History
-                </Button.Content>
+                    TextElement.FontFamily = "/Fonts/#Minecraft" Click="HomeButton_Click">
+                <Button.Content>Home</Button.Content>
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="Transparent"/>
@@ -176,190 +127,45 @@
                 </Button.Style>
             </Button>
         </Border>
-        <!--All of the light gray thing-->
-        <Grid Grid.Column="0" Grid.Row="1" Margin="10,9.6,9.8,10">
-            <Grid.Background>
-                <ImageBrush ImageSource="/Assets/ReactorGUI_Background.png"/>
-            </Grid.Background>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition Height="32"/>
-                <RowDefinition Height="12"/>
-            </Grid.RowDefinitions>
-            <!--Outside of dark gray thing-->
-            <Border Padding="20">
-                <Grid>
-                    <Grid.Background>
-                        <ImageBrush ImageSource="/Assets/inside.png"/>
-                    </Grid.Background>
-                    <!--I should put textblocks in it-->
-                    <Grid Margin="10">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <!--X Value Holder-->
-                        <Grid Grid.Row="0" Margin="10">
-                            <Grid.Style>
-                                <Style TargetType="{x:Type Grid}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Background" Value="{StaticResource inside_off}"></Setter>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="{StaticResource inside_active}"></Setter>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Grid.Style>
-                            <Grid Margin="5">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="20"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-
-                                <TextBlock x:Name="Val_Name" Foreground="#FFD34242" Style="{StaticResource CustomFont}" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" Margin="131,0">
-                                    <Run>X Value</Run>
-                                </TextBlock>
-                                <Grid Grid.Row="1">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="82*"/>
-                                        <ColumnDefinition Width="73*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <!--X Current-->
-                                    <Grid Margin="5">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="20*"/>
-                                            <RowDefinition Height="49*"/>
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Style="{StaticResource CustomFont}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0">Current</TextBlock>
-                                        <TextBox x:Name="current_x_get" Grid.Row="1" Style="{StaticResource anan}" IsMouseCaptureWithinChanged="current_x_get_IsMouseCaptureWithinChanged" SelectionBrush="Black"/>
-                                    </Grid>
-                                    <!--X Destination-->
-                                    <Grid Grid.Column="1" Margin="5">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="20*"/>
-                                            <RowDefinition Height="49*"/>
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Style="{StaticResource CustomFont}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0">Destination</TextBlock>
-                                        <TextBox x:Name="destination_x_get" Grid.Row="1" Style="{StaticResource anan}" IsMouseCaptureWithinChanged="current_x_get_IsMouseCaptureWithinChanged" SelectionBrush="#FF7EB4EA"></TextBox>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <!--Y Value Holder-->
-                        <Grid Grid.Row="1" Margin="10">
-                            <Grid.Style>
-                                <Style TargetType="{x:Type Grid}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Background" Value="{StaticResource inside_off}"></Setter>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="{StaticResource inside_active}"></Setter>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Grid.Style>
-                            <Grid Margin="5">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="20"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Foreground="#FFFF8641" Style="{StaticResource CustomFont}" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18">
-                                    Y Value
-                                </TextBlock>
-                                <Grid Grid.Row="1">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="82*"/>
-                                        <ColumnDefinition Width="73*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <!--Y Current-->
-                                    <Grid Margin="5">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="20*"/>
-                                            <RowDefinition Height="49*"/>
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Style="{StaticResource CustomFont}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0">Current</TextBlock>
-                                        <TextBox x:Name="current_y_get" Grid.Row="1" Style="{StaticResource anan }" IsMouseCaptureWithinChanged="current_x_get_IsMouseCaptureWithinChanged"></TextBox>
-                                    </Grid>
-                                    <!--Y Destination-->
-                                    <Grid Grid.Column="1" Margin="5">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="20*"/>
-                                            <RowDefinition Height="49*"/>
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Style="{StaticResource CustomFont}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0">Destination</TextBlock>
-                                        <TextBox x:Name="destination_y_get" Grid.Row="1" Style="{StaticResource anan}"></TextBox>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <!--Z Value Holder-->
-                        <Grid Grid.Row="2" Margin="10">
-                            <Grid.Style>
-                                <Style TargetType="{x:Type Grid}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Background" Value="{StaticResource inside_off}"></Setter>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="{StaticResource inside_active}"></Setter>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Grid.Style>
-                            <Grid Margin="5">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="20"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Foreground="#FF91B82C" Style="{StaticResource CustomFont}" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18">
-                                    
-                                    Z Value
-                                </TextBlock>
-                                <Grid Grid.Row="1">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="82*"/>
-                                        <ColumnDefinition Width="73*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <!--Z Current-->
-                                    <Grid Margin="5">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="20*"/>
-                                            <RowDefinition Height="49*"/>
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Style="{StaticResource CustomFont}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0">Current</TextBlock>
-                                        <TextBox x:Name="current_z_get" Grid.Row="1" Style="{StaticResource anan}"></TextBox>
-                                    </Grid>
-                                    <!--Z Destination-->
-                                    <Grid Grid.Column="1" Margin="5">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="20*"/>
-                                            <RowDefinition Height="49*"/>
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Style="{StaticResource CustomFont}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0">Destination</TextBlock>
-                                        <TextBox x:Name="destination_z_get" Grid.Row="1" Style="{StaticResource anan}" IsMouseCaptureWithinChanged="current_x_get_IsMouseCaptureWithinChanged"></TextBox>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </Border>
-            <!--Calculate Button-->
-            <Button Margin="20,380,20,0" Grid.RowSpan="2" Click="Button_Click">
+         <!--History Border-->
+        <Border Name="HistoryBorder" 
+                Grid.Column="0" 
+                Height="30" 
+                VerticalAlignment="Top" 
+                Margin="100,0,263.8,0" 
+                CornerRadius="0,0,15,15" 
+                MouseDown="draging_bar">
+            <Border.Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Background" Value="#FF323030"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=HistoryButton, Path=IsMouseOver}" Value="True">
+                            <DataTrigger.Setters>
+                                <Setter Property="BorderThickness" Value="2,0,2,0"/>
+                                <Setter Property="BorderBrush" Value="#FF323030"/>
+                                <Setter Property="Background" Value="#FFB6B002"/>
+                            </DataTrigger.Setters>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <!--Home button-->
+            <Button HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Width="72.9" 
+                    Name="HistoryButton" 
+                    Height="30" 
+                    Margin="0" 
+                    TextElement.FontFamily = "/Fonts/#Minecraft" Click="HistoryButton_Click">
+                <Button.Content>History</Button.Content>
                 <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background" Value="{StaticResource Calc_button_off}"/>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="#FFB6B002"/>
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1">
+                                    <Border Background="{TemplateBinding Background}">
                                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     </Border>
                                 </ControlTemplate>
@@ -367,102 +173,70 @@
                         </Setter>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{StaticResource Calc_button_on}"/>
+                                <Setter Property="TextElement.Foreground" Value="#FF323030"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
             </Button>
-        </Grid>
-        <!--Right part-->
-        <Grid Grid.Column="1" Grid.RowSpan="2" Margin="0.2,30,-0.2,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <!--Upper Right (Educational)-->
-            <Grid Grid.Row="0" Margin="10">
-                <Grid.Background>
-                    <ImageBrush Stretch="Uniform" ImageSource="/Assets/Teacher.png"/>
-                </Grid.Background>
+        </Border>
+        <!--Credit Border-->
+        <Border Name="CreditBorder" 
+                Grid.Column="1" 
+                Height="30"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top" 
+                CornerRadius="0,0,0,15" 
+                MouseDown="draging_bar">
+            <Border.Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Background" Value="#FF323030"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=CreditButton, Path=IsMouseOver}" Value="True">
+                            <DataTrigger.Setters>
+                                <Setter Property="BorderThickness" Value="2,0,0,0"/>
+                                <Setter Property="BorderBrush" Value="#FF323030"/>
+                                <Setter Property="Background" Value="#FF763E3E"/>
+                            </DataTrigger.Setters>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <!--Home button-->
+            <Button HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Width="72.9" 
+                    Name="CreditButton" 
+                    Height="30" 
+                    Margin="0" 
+                    TextElement.FontFamily = "/Fonts/#Minecraft" 
+                    Click="CreditButton_Click">
+                <Button.Content>Credit</Button.Content>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="#FFB6B002"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="TextElement.Foreground" Value="#FF457836"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Border>
 
-            </Grid>
-            <!--Lower Right-->
-            <Grid Grid.Row="1" Margin="10">
-                <Grid.Background>
-                    <ImageBrush ImageSource="/Assets/ReactorGUI_Background.png"/>
-                </Grid.Background>
-                <!--Upper Right inside light gray-->
-                <Grid Grid.Row="1" Margin="5">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="30"/>
-                    </Grid.RowDefinitions>
-                    <!--Results_text-->
-                    <Border Margin="174,8,174,-2" Grid.Row="1" Background="#FFAEAEAE" CornerRadius="10,10,0,0" BorderThickness="1,1,1,0" BorderBrush="#FF555555">
-                        <TextBlock x:Name="Res_rainbow" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ResourceKey=CustomFont}" Foreground="#FF996100"><Run Text="Results"/></TextBlock>
-                    </Border>
-                    <!--Upside of results-->
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <!--Results_left_up Estimated time-->
-                        <Grid Grid.Row="0" Grid.Column="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="25*"/>
-                                <RowDefinition Height="59*"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource CustomFont}">Estimated Time</TextBlock>
-                            <!--Estimated Time Result Grid-->
-                            <Grid Grid.Row="1" Margin="10">
-                                <Grid.Background>
-                                    <ImageBrush ImageSource="/Assets/inside_long.png"/>
-                                </Grid.Background>
-                                <TextBlock x:Name="Estimated_time_result" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource CustomFont}" Foreground="#FF21B9D1"></TextBlock>
-                            </Grid>
-                        </Grid>
-                        <!--Results_right_up Where Should You Go-->
-                        <Grid Grid.Row="0" Grid.Column="1">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="25*"/>
-                                <RowDefinition Height="59*"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource CustomFont}"><Run Text="Wher"/><Run Text="e"/><Run Text=" Should You Go ?"/></TextBlock>
-                            <Grid Grid.Row="1" Margin="10">
-                                <Grid.Background>
-                                    <ImageBrush ImageSource="/Assets/inside_long.png"/>
-                                </Grid.Background>
-                                <TextBlock x:Name="Where_result" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource CustomFont}" Foreground="#FF21B9D1"></TextBlock>
-                            </Grid>
-                        </Grid>
-                        <!--Distance-->
-                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="13*"/>
-                                <RowDefinition Height="29*"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource CustomFont}">Distance</TextBlock>
-                            <Grid Grid.Row="1" Margin="10">
-                                <Grid.Background>
-                                    <ImageBrush ImageSource="/Assets/inside_long.png"/>
-                                </Grid.Background>
-                                <TextBlock x:Name="Distance_result" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource CustomFont}" Foreground="#FF21B9D1"></TextBlock>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </Grid>
-            <!--Lover Right-->
-            <Grid Grid.Row="1">
+        <Frame x:Name="Main" Grid.Row="1" Grid.ColumnSpan="2" NavigationUIVisibility="Hidden"/>
 
-            </Grid>
-        </Grid>
     </Grid>
 
 

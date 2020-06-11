@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\kaanm\Source\Repos\Minecraft_Measurer\App.xaml
-2264536702
+5484821667
 
-6-1629668506
+9949708547
 151397803362
-MainWindow.xaml;Message_box.xaml;
+Pages\calculation.xaml;Pages\Credit.xaml;Pages\History_page.xaml;MainWindow.xaml;Message_box.xaml;
 
 False
 
