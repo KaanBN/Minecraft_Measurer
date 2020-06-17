@@ -21,6 +21,9 @@ namespace WPFbasics
     /// </summary>
     public partial class MainWindow : Window
     {
+        main_calculation cal = new main_calculation();
+        History_page his = new History_page();
+        Pages.Credit cre = new Pages.Credit();
         public MainWindow()
         {
             InitializeComponent();
@@ -35,16 +38,16 @@ namespace WPFbasics
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new main_calculation();
+            Main.Content = cal;
         }
 
         private void HistoryButton_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new History_page();
+            Main.Content = his;
         }
         private void CreditButton_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Pages.Credit();
+            Main.Content = cre;
         }
 
     }
