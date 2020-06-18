@@ -52,7 +52,6 @@
                         </Setter>
                     </Style>
                 </ListBox.ItemContainerStyle>
-                <ListBoxItem>1.item</ListBoxItem>
             </ListBox>
         </Grid>
     </Grid>
