@@ -7,9 +7,9 @@ sqrt((x2-x1)^2+(y2-y1)^2+(z2-z1)^2)
 actually, no but I was using this a lot while playing with my friends and I wanted to make this faster and good looking :smile: .
 
 ### This is main page:
-![main](https://user-images.githubusercontent.com/59030268/84429528-fbbb8680-ac30-11ea-9017-d570a2fd8708.png)
+![main](https://user-images.githubusercontent.com/59030268/85065910-a2b29c00-b1b6-11ea-8a55-d75e684dca27.png)
 ### This is Histroy page:
-![H](https://user-images.githubusercontent.com/59030268/84429533-fcecb380-ac30-11ea-9cd3-e6bc5f3297f2.png)
+![his](https://user-images.githubusercontent.com/59030268/85065905-a1816f00-b1b6-11ea-8bcd-4c57ef312073.png)
 ### And here is the Credit page:
 ![credit](https://user-images.githubusercontent.com/59030268/84429537-fd854a00-ac30-11ea-9b3b-acf9cfc844d1.png)
 ### It also has it's own error box
