@@ -239,7 +239,7 @@
             </Border>
             
             <!--Calculate Button-->
-            <Button Grid.Row="1" Margin="30 0" Click="Button_Click">
+            <Button Grid.Row="1" Margin="30 0" Click="Calculation_Button_Click">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Background" Value="{StaticResource Calc_button_off}"/>

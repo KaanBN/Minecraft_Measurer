@@ -25,7 +25,7 @@ namespace WPFbasics
         {
             InitializeComponent();
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Calculation_Button_Click(object sender, RoutedEventArgs e)
         {
             if ((String.IsNullOrEmpty(current_x_get.Text) || String.IsNullOrEmpty(current_y_get.Text) || String.IsNullOrEmpty(current_z_get.Text) || String.IsNullOrEmpty(destination_x_get.Text) || String.IsNullOrEmpty(destination_y_get.Text) || String.IsNullOrEmpty(destination_z_get.Text)))
             {
