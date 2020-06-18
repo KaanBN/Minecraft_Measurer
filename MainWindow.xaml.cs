@@ -113,7 +113,7 @@ namespace WPFbasics
                 Estimated_time_result.Text = hour + " : " + min + " : " + sec;
                 if (his.HistoryList.Items.Contains("CX: " + cur_x + " CY: " + cur_y + " CZ: " + cur_z + " | " + "DX: " + des_x + " DY: " + des_y + " DZ: " + des_z + "        Distance:" + distance))
                 {
-                    
+                    MessageBox.Show("This item already exists");
                 }
                 else
                 {
