@@ -111,6 +111,16 @@ namespace WPFbasics
                 }
                 Where_result.Text = (Ns + " " + Ew + " " + Ud);
                 Estimated_time_result.Text = hour + " : " + min + " : " + sec;
+                if (his.HistoryList.Items.Contains("CX: " + cur_x + " CY: " + cur_y + " CZ: " + cur_z + " | " + "DX: " + des_x + " DY: " + des_y + " DZ: " + des_z + "        Distance:" + distance))
+                {
+                    
+                }
+                else
+                {
+                    his.HistoryList.Items.Add("CX: " + cur_x + " CY: " + cur_y + " CZ: " + cur_z + " | " + "DX: " + des_x + " DY: " + des_y + " DZ: " + des_z + "        Distance:" + distance);
+
+                }
+
             }
         }
 
