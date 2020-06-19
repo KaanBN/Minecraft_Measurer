@@ -1,17 +1,28 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
-namespace WPFbasics
+namespace WPFbasics.UserControls
 {
     /// <summary>
-    /// Interaction logic for main_calculation.xaml
+    /// Interaction logic for CalculationUC.xaml
     /// </summary>
-    public partial class main_calculation : Page
+    public partial class CalculationUC : UserControl
     {
-        public main_calculation()
+        Message_box anana = new Message_box();
+        public CalculationUC()
         {
             InitializeComponent();
         }
@@ -19,7 +30,6 @@ namespace WPFbasics
         {
             if ((String.IsNullOrEmpty(current_x_get.Text) || String.IsNullOrEmpty(current_y_get.Text) || String.IsNullOrEmpty(current_z_get.Text) || String.IsNullOrEmpty(destination_x_get.Text) || String.IsNullOrEmpty(destination_y_get.Text) || String.IsNullOrEmpty(destination_z_get.Text)))
             {
-                var anana = new Message_box();
                 anana.ShowDialog();
             }
             else
