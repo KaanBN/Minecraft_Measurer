@@ -60,18 +60,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Pages\calculation.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Credit.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\History_page.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="Windows\Message_Box.xaml.cs">
+      <DependentUpon>Message_Box.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -80,34 +71,36 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Pages\calculation.xaml.cs">
-      <DependentUpon>calculation.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Credit.xaml.cs">
-      <DependentUpon>Credit.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\History_page.xaml.cs">
-      <DependentUpon>History_page.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="windows\coordinate_info.xaml">
+    <Page Include="UserControls\Calculation_userc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="windows\Message_box.xaml">
+    <Page Include="UserControls\Credit_usrc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\History_usrc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Message_Box.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="windows\coordinate_info.xaml.cs">
-      <DependentUpon>coordinate_info.xaml</DependentUpon>
+    <Compile Include="UserControls\Calculation_userc.xaml.cs">
+      <DependentUpon>Calculation_userc.xaml</DependentUpon>
     </Compile>
-    <Compile Include="windows\Message_box.xaml.cs">
-      <DependentUpon>Message_box.xaml</DependentUpon>
+    <Compile Include="UserControls\Credit_usrc.xaml.cs">
+      <DependentUpon>Credit_usrc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\History_usrc.xaml.cs">
+      <DependentUpon>History_usrc.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

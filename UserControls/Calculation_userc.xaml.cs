@@ -14,14 +14,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPFbasics
+namespace WPFbasics.UserControls
 {
     /// <summary>
-    /// Interaction logic for main_calculation.xaml
+    /// Interaction logic for Calculation_userc.xaml
     /// </summary>
-    public partial class main_calculation : Page
+    public partial class Calculation_userc : UserControl
     {
-        public main_calculation()
+        public Calculation_userc()
         {
             InitializeComponent();
         }
@@ -83,8 +83,8 @@ namespace WPFbasics
                     Ud = "Up";
                 }
                 Where_result.Text = (Ns + " " + Ew + " " + Ud);
-
                 Estimated_time_result.Text = hour + " : " + min + " : " + sec;
+
             }
         }
 
@@ -112,5 +112,6 @@ namespace WPFbasics
             TextBox textBox = (TextBox)sender;
             textBox.SelectAll();
         }
+
     }
 }
