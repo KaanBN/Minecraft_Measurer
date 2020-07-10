@@ -176,7 +176,7 @@
                 </Button.Style>
             </Button>
         </Border>
-         <!--History Border-->
+        <!--History Border-->
         <Border Name="HistoryBorder" 
                 Grid.Column="0" 
                 Height="30" 
@@ -351,7 +351,7 @@
                                                 <RowDefinition Height="20*"/>
                                                 <RowDefinition Height="49*"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Style="{StaticResource CustomFont}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0">Current</TextBlock>
+                                            <TextBlock Style="{StaticResource CustomFont}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0" Margin="58,0,59,1">asdasd</TextBlock>
                                             <TextBox x:Name="current_x_get" KeyboardNavigation.TabIndex="0" Grid.Row="1" Style="{StaticResource anan}" IsMouseCaptureWithinChanged="current_x_get_IsMouseCaptureWithinChanged" SelectionBrush="Black"/>
                                         </Grid>
                                         <!--X Destination-->
