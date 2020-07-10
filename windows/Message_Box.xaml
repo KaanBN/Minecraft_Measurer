@@ -12,8 +12,8 @@
         mc:Ignorable="d"
         Title="Message_box" Height="170" Width="340" MouseDown="Window_MouseDown">
     <Window.Resources>
-        <ImageBrush x:Key="ButtonImage" ImageSource="Ok_off.png"></ImageBrush>
-        <ImageBrush x:Key="ok_on" ImageSource="Ok_on.png"/>
+        <ImageBrush x:Key="ButtonImage" ImageSource="C:\Users\kaanm\Source\Repos\Minecraft_Measurer\Assets\Ok_off.png"></ImageBrush>
+        <ImageBrush x:Key="ok_on" ImageSource="C:\Users\kaanm\Source\Repos\Minecraft_Measurer\Assets\Ok_on.png"/>
         <Style TargetType="Button">
             <Setter Property="Background" Value="{StaticResource ButtonImage}"></Setter>
             <Setter Property="Template">
@@ -35,7 +35,7 @@
         </Style>
     </Window.Resources>
     <Window.Background>
-        <ImageBrush ImageSource="message_box_back.png"/>
+        <ImageBrush ImageSource="C:\Users\kaanm\Source\Repos\Minecraft_Measurer\Assets\message_box_back.png"/>
     </Window.Background>
     <Grid>
         <Grid.RowDefinitions>

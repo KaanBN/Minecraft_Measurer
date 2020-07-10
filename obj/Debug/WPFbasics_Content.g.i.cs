@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pages/underconstruction.gif")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/close_active.png")]
 
 

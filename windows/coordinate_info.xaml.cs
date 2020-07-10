@@ -10,19 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPFbasics.UserControls
+namespace WPFbasics.windows
 {
     /// <summary>
-    /// Interaction logic for CreditUC.xaml
+    /// Interaction logic for coordinate_info.xaml
     /// </summary>
-    public partial class CreditUC : UserControl
+    public partial class coordinate_info : Window
     {
-        public CreditUC()
+        public coordinate_info()
         {
             InitializeComponent();
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }

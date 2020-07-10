@@ -93,13 +93,20 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Message_box.xaml">
+    <Page Include="windows\coordinate_info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\Message_box.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Message_box.xaml.cs">
+    <Compile Include="windows\coordinate_info.xaml.cs">
+      <DependentUpon>coordinate_info.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\Message_box.xaml.cs">
       <DependentUpon>Message_box.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -162,13 +169,13 @@
     <Resource Include="Assets\bedrock.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ok_off.png" />
+    <Resource Include="Assets\Ok_off.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ok_on.png" />
+    <Resource Include="Assets\Ok_on.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="message_box_back.png" />
+    <Resource Include="Assets\message_box_back.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\iconfinder_Education-Filled_29_3672873.ico" />
@@ -181,6 +188,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\left_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\close_active.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

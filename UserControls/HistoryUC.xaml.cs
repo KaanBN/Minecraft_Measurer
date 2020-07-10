@@ -13,22 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPFbasics
+namespace WPFbasics.UserControls
 {
     /// <summary>
-    /// Interaction logic for History_page.xaml
+    /// Interaction logic for HistoryUC.xaml
     /// </summary>
-    public partial class History_page : Page
+    public partial class HistoryUC : UserControl
     {
-        public History_page()
+        public HistoryUC()
         {
             InitializeComponent();
-        }
-
-        private void HistoryList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            var infm = new windows.coordinate_info();
-            infm.ShowDialog();
         }
     }
 }
