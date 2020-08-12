@@ -44,18 +44,11 @@
                                 <Setter Property="BorderBrush" Value="#FF323030"/>
                             </DataTrigger.Setters>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ElementName=CloseButton, Path=IsFocused}" Value="True">
-                            <DataTrigger.Setters>
-                                <Setter Property="Background" Value="#FF595959"/>
-                                <Setter Property="BorderThickness" Value="3,0,3,1"/>
-                                <Setter Property="BorderBrush" Value="#FF323030"/>
-                            </DataTrigger.Setters>
-                        </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Border.Style>
             <Button HorizontalAlignment="Center" 
-                            VerticalAlignment="Center" 
+                            VerticalAlignment="Bottom" 
                             Width="73" 
                             Name="CloseButton" 
                             Height="30" 
@@ -250,7 +243,14 @@
             </Button>
         </Border>
 
-        <Frame x:Name="Main" Grid.Row="1" Grid.ColumnSpan="2" NavigationUIVisibility="Hidden" IsTabStop="False" Margin="10"/>
+        <Frame x:Name="Main" 
+               Grid.Row="1" 
+               Grid.ColumnSpan="2" 
+               NavigationUIVisibility="Hidden" 
+               IsTabStop="False" 
+               Margin="10" 
+               LoadCompleted="Frame_LoadCompleted" 
+               DataContextChanged="Frame_DataContextChanged"/>
     </Grid>
 
 

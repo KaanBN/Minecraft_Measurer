@@ -8,25 +8,28 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <ImageBrush x:Key="List_back" ImageSource="C:/Users/kaanm/Source/Repos/Minecraft_Measurer/Assets/inside.png"/>
+        
     </UserControl.Resources>
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="C:/Users/kaanm/Source/Repos/Minecraft_Measurer/Assets/Backgrounds.png"/>
         </Grid.Background>
         <Grid Margin="20" Background="{StaticResource List_back}">
-            <ListBox x:Name="HistoryList" Margin="10" BorderBrush="{x:Null}" Background="Transparent" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Hidden" MouseDoubleClick="HistoryList_MouseDoubleClick">
+            <ListBox x:Name="HistoryList" 
+                     Margin="10" 
+                     BorderBrush="{x:Null}" 
+                     Background="Transparent" 
+                     ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                     ItemsSource="{Binding Measure}">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="Background" Value="Transparent"/>
-                        <Setter Property="ToolTip">
-                            <Setter.Value>
-                                <TextBlock>anan</TextBlock>
-                            </Setter.Value>
-                        </Setter>
                         <Setter Property="Foreground" Value="#FF265321"/>
                         <Setter Property="FontSize" Value="20"/>
                         <Setter Property="TextElement.FontFamily" Value="C:/Users/kaanm/source/repos/Minecraft_Measurer/Fonts/#Minecraft"/>
-                        <Setter Property="Height" Value="32"/>
+                        <Setter Property="Height" Value="auto"/>
+                        <Setter Property="BorderThickness" Value="3,2,0,0"/>
+                        <Setter Property="BorderBrush" Value="Black"/>
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
@@ -35,8 +38,8 @@
                                     </Border>
                                     <ControlTemplate.Triggers>
                                         <Trigger Property="IsSelected" Value="true">
-                                            <Setter Property="Background" TargetName="Bd" Value="#FF886B6B"/>
-                                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                                            <Setter Property="Background" TargetName="Bd" Value="#c5c5c5"/>
+                                            <Setter Property="Foreground" Value="#FF898F12"/>
                                         </Trigger>
 
                                         <MultiTrigger>
@@ -44,8 +47,8 @@
                                                 <Condition Property="IsSelected" Value="true"/>
                                                 <Condition Property="Selector.IsSelectionActive" Value="false"/>
                                             </MultiTrigger.Conditions>
-                                            <Setter Property="Background" TargetName="Bd" Value="Transparent"/>
-                                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}}"/>
+                                            <Setter Property="Background" TargetName="Bd" Value="#FF666666"/>
+                                            <Setter Property="Foreground" Value="#FF265321"/>
                                         </MultiTrigger>
                                     </ControlTemplate.Triggers>
                                 </ControlTemplate>
@@ -53,7 +56,8 @@
                         </Setter>
                     </Style>
                 </ListBox.ItemContainerStyle>
-                <ListBoxItem>asd</ListBoxItem>
+
+
             </ListBox>
 
         </Grid>

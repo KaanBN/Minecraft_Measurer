@@ -60,6 +60,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model.cs" />
     <Compile Include="Windows\Message_Box.xaml.cs">
       <DependentUpon>Message_Box.xaml</DependentUpon>
     </Compile>
@@ -187,6 +188,41 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\close_active.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_11.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_12.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_14.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_15.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_16.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_17.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_18.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_19.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_20.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_21.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_22.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_23.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_24.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_25.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_26.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_27.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_28.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_29.png" />
+    <Resource Include="Minecraft hatıra\Castle\Screenshot_30.png" />
+    <Resource Include="Minecraft hatıra\Farm\Screenshot_1.png" />
+    <Resource Include="Minecraft hatıra\Farm\Screenshot_10.png" />
+    <Resource Include="Minecraft hatıra\Farm\Screenshot_11.png" />
+    <Resource Include="Minecraft hatıra\Farm\Screenshot_12.png" />
+    <Resource Include="Minecraft hatıra\Farm\Screenshot_13.png" />
+    <Resource Include="Minecraft hatıra\Farm\Screenshot_14.png" />
+    <Resource Include="Minecraft hatıra\Farm\Screenshot_2.png" />
+    <Resource Include="Minecraft hatıra\Farm\Screenshot_3.png" />
+    <Resource Include="Minecraft hatıra\Farm\Screenshot_4.png" />
+    <Resource Include="Minecraft hatıra\Farm\Screenshot_5.png" />
+    <Resource Include="Minecraft hatıra\Farm\Screenshot_6.png" />
+    <Resource Include="Minecraft hatıra\Farm\Screenshot_7.png" />
+    <Resource Include="Minecraft hatıra\Farm\Screenshot_8.png" />
+    <Resource Include="Minecraft hatıra\Farm\Screenshot_9.png" />
+    <Resource Include="UserControls\Saved success.png" />
+    <Resource Include="Assets\Saved success.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

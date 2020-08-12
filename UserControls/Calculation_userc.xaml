@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFbasics.UserControls"
+             FontFamily="C:\Users\kaanm\Source\Repos\Minecraft_Measurer\Fonts\#Minecraft"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -121,7 +122,7 @@
                                             <RowDefinition Height="49*"/>
                                         </Grid.RowDefinitions>
                                         <TextBlock Style="{StaticResource CustomFont}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0">Current</TextBlock>
-                                        <TextBox x:Name="current_x_get" KeyboardNavigation.TabIndex="0" Grid.Row="1" Style="{StaticResource anan}" IsMouseCaptureWithinChanged="current_x_get_IsMouseCaptureWithinChanged" SelectionBrush="Black"/>
+                                        <TextBox Text="{Binding Curx}" x:Name="current_x_get" KeyboardNavigation.TabIndex="0" Grid.Row="1" Style="{StaticResource anan}" IsMouseCaptureWithinChanged="current_x_get_IsMouseCaptureWithinChanged" SelectionBrush="Black"/>
                                     </Grid>
                                     <!--X Destination-->
                                     <Grid Grid.Column="1" Margin="5">
@@ -130,7 +131,7 @@
                                             <RowDefinition Height="49*"/>
                                         </Grid.RowDefinitions>
                                         <TextBlock Style="{StaticResource CustomFont}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0">Destination</TextBlock>
-                                        <TextBox x:Name="destination_x_get" KeyboardNavigation.TabIndex="3" Grid.Row="1" Style="{StaticResource anan}" IsMouseCaptureWithinChanged="current_x_get_IsMouseCaptureWithinChanged" SelectionBrush="#FF7EB4EA"></TextBox>
+                                        <TextBox Text="{Binding Desx}" x:Name="destination_x_get" KeyboardNavigation.TabIndex="3" Grid.Row="1" Style="{StaticResource anan}" IsMouseCaptureWithinChanged="current_x_get_IsMouseCaptureWithinChanged" SelectionBrush="#FF7EB4EA"></TextBox>
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -170,7 +171,7 @@
                                             <RowDefinition Height="49*"/>
                                         </Grid.RowDefinitions>
                                         <TextBlock Style="{StaticResource CustomFont}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0">Current</TextBlock>
-                                        <TextBox x:Name="current_y_get" KeyboardNavigation.TabIndex="1" Grid.Row="1" Style="{StaticResource anan }" IsMouseCaptureWithinChanged="current_x_get_IsMouseCaptureWithinChanged"></TextBox>
+                                        <TextBox Text="{Binding Cury}" x:Name="current_y_get" KeyboardNavigation.TabIndex="1" Grid.Row="1" Style="{StaticResource anan }" IsMouseCaptureWithinChanged="current_x_get_IsMouseCaptureWithinChanged"></TextBox>
                                     </Grid>
                                     <!--Y Destination-->
                                     <Grid Grid.Column="1" Margin="5">
@@ -179,7 +180,7 @@
                                             <RowDefinition Height="49*"/>
                                         </Grid.RowDefinitions>
                                         <TextBlock Style="{StaticResource CustomFont}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0">Destination</TextBlock>
-                                        <TextBox x:Name="destination_y_get" KeyboardNavigation.TabIndex="4" Grid.Row="1" Style="{StaticResource anan}"></TextBox>
+                                        <TextBox Text="{Binding Desy}"  x:Name="destination_y_get" KeyboardNavigation.TabIndex="4" Grid.Row="1" Style="{StaticResource anan}"></TextBox>
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -220,7 +221,7 @@
                                             <RowDefinition Height="49*"/>
                                         </Grid.RowDefinitions>
                                         <TextBlock Style="{StaticResource CustomFont}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0">Current</TextBlock>
-                                        <TextBox x:Name="current_z_get" KeyboardNavigation.TabIndex="2" Grid.Row="1" Style="{StaticResource anan}"></TextBox>
+                                        <TextBox Text="{Binding Curz}" x:Name="current_z_get" KeyboardNavigation.TabIndex="2" Grid.Row="1" Style="{StaticResource anan}"></TextBox>
                                     </Grid>
                                     <!--Z Destination-->
                                     <Grid Grid.Column="1" Margin="5">
@@ -229,7 +230,7 @@
                                             <RowDefinition Height="49*"/>
                                         </Grid.RowDefinitions>
                                         <TextBlock Style="{StaticResource CustomFont}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0">Destination</TextBlock>
-                                        <TextBox x:Name="destination_z_get" KeyboardNavigation.TabIndex="5" Grid.Row="1" Style="{StaticResource anan}" IsMouseCaptureWithinChanged="current_x_get_IsMouseCaptureWithinChanged"></TextBox>
+                                        <TextBox Text="{Binding Desz}" x:Name="destination_z_get" KeyboardNavigation.TabIndex="5" Grid.Row="1" Style="{StaticResource anan}" IsMouseCaptureWithinChanged="current_x_get_IsMouseCaptureWithinChanged"></TextBox>
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -243,6 +244,7 @@
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Background" Value="{StaticResource Calc_button_off}"/>
+                        <Setter Property="Command" Value="{Binding AddCommands}"/>
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="{x:Type Button}">
@@ -256,9 +258,6 @@
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background" Value="{StaticResource Calc_button_on}"/>
                             </Trigger>
-                            <Trigger Property="IsFocused" Value="True">
-                                <Setter Property="Background" Value="{StaticResource Calc_button_on}"/>
-                            </Trigger>
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
@@ -270,8 +269,17 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <!--Upper Right (Educational)-->
-            <Grid Grid.Row="0" Margin="10">
+            <!--Upper Right-->
+            <Grid Grid.Row="0">
+                <Border Height="64" Width="320" VerticalAlignment="Center" Margin="0,-440,-10,0" HorizontalAlignment="Right">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Saved success.png"/>
+                    </Border.Background>
+                    <Border.RenderTransform>
+                        <TranslateTransform x:Name="borderTransform"/>
+                    </Border.RenderTransform>
+
+                </Border>
             </Grid>
             <!--Lower Right-->
             <Grid Grid.Row="1" Margin="10">
@@ -285,7 +293,7 @@
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
                     <!--Results_text-->
-                    <Border Margin="130 0 130 -1" Grid.Row="1" Background="#FFAEAEAE" CornerRadius="10,10,0,0" BorderThickness="1,1,1,0" BorderBrush="#FF555555">
+                    <Border Margin="140 0 140 -1" Grid.Row="1" Background="#FFAEAEAE" CornerRadius="10,10,0,0" BorderThickness="1,1,1,0" BorderBrush="#FF555555">
                         <TextBlock x:Name="Res_rainbow" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ResourceKey=CustomFont}" Foreground="#FF996100"><Run Text="Results"/></TextBlock>
                     </Border>
                     <!--Upside of results-->

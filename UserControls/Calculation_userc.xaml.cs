@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace WPFbasics.UserControls
 {
@@ -24,6 +16,16 @@ namespace WPFbasics.UserControls
         public Calculation_userc()
         {
             InitializeComponent();
+            
+        }
+        DoubleAnimation db = new DoubleAnimation();
+        void Asd()
+        {
+            
+            db.From = 0;
+            db.To = 110;
+            db.Duration = TimeSpan.FromSeconds(0.5);
+            borderTransform.BeginAnimation(TranslateTransform.YProperty, db);
         }
         private void Calculation_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -48,7 +50,7 @@ namespace WPFbasics.UserControls
                 int hour = Convert.ToInt32(time) / 3600;
                 int min = (Convert.ToInt32(time) - (3600 * hour)) / 60;
                 int sec = (Convert.ToInt32(time) - (3600 * hour) - (min * 60));
-                string Ns = "-", Ew = "-", Ud = "-";
+                string Ns, Ew, Ud = "";
                 Distance_result.Text = "" + distance + " Blocks";
                 if (cur_z > des_z)
                 {
@@ -84,7 +86,10 @@ namespace WPFbasics.UserControls
                 }
                 Where_result.Text = (Ns + " " + Ew + " " + Ud);
                 Estimated_time_result.Text = hour + " : " + min + " : " + sec;
+                if (Parent.isok)
+                {
 
+                }
             }
         }
 

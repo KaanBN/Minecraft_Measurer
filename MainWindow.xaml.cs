@@ -29,6 +29,7 @@ namespace WPFbasics
             InitializeComponent();
             Main.Content = cal;
             CloseButton.Click += (s, e) => Close();
+            Main.DataContext = new Model();
         }
 
         private void draging_bar(object sender, MouseButtonEventArgs e)
@@ -48,6 +49,25 @@ namespace WPFbasics
         private void CreditButton_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = cre;
+        }
+
+        private void Frame_LoadCompleted(object sender, NavigationEventArgs e)
+        {
+            UpdateFrameDataContext();
+        }
+
+        private void Frame_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            UpdateFrameDataContext();
+        }
+        private void UpdateFrameDataContext()
+        {
+            var content = this.Main.Content as FrameworkElement;
+            if (content == null)
+            {
+                return;
+            }
+            content.DataContext = this.Main.DataContext;
         }
 
     }
